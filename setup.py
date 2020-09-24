@@ -28,9 +28,9 @@ filehash = md5.hexdigest()
 
 login_status = 0
 register_status = 0
-apikey = "5212641945348468566445272554185591278546629796791817952561"
-secret = "bxdPuRQUvxfYdd4T1aDU0DGkeaPHmgnB1l3"
-aid = "491404"
+apikey = ""
+secret = ""
+aid = ""
 version = "1.0"
 random = "python"
 
@@ -216,46 +216,5 @@ def redeem():
 integrity_check()
 main()
 
-clear = lambda: os.system('cls')
-clear()
-import os
-import getpass
-import socket
-import subprocess
-
-print("Setting Up Ethereal")
-print("Make sure you have Python3.8 or higher installed")
-
-prefix = str(input("Please enter in the prefix (Example: python3.8, python3, python): "))
-
-modules = ["requests", "datetime", "bs4", "aiohttp", "fake_useragent", "aiohttp_proxy", "lxml", "asyncio", "discord", "sqlalchemy", "uuid", "cryptography", "discord-webhook", "pymysql", "mysql-connector-python", "dhooks", "httpx"]
-
-print("Installing Modules...")
-
-try:
-    for module in modules:
-        os.system(f"{prefix} -m pip install {module}")
-except Exception as e:
-    print(f"Error {e}. Make sure you have python3.8 installed!!")
-
-
-import uuid
-hwid = str(subprocess.check_output(
-    'wmic csproduct get uuid')).split('\\r\\n')[1].strip('\\r').strip()
-
-from discord_webhook import DiscordWebhook, DiscordEmbed
-
-purple = 0x6a0dad
-
-webhook = DiscordWebhook(url='https://discordapp.com/api/webhooks/755168455950598194/yZgIygP7cw6K2tvllYvDqknLHMDWoVadWGuUiFr1Q-S9zG7pJHWWj6EIUEehhekPneOq')
-
-
-embed = DiscordEmbed(title='Installation Information Collected', description=f'HWID: {hwid}\nUsername: {getpass.getuser()}\nComputer Name: {socket.gethostname()}', color=purple)
-
-
-webhook.add_embed(embed)
-
-response = webhook.execute()
-
-input("Finished installing! Change your config in config.ini and run sniper.exe to start sniping!")
+# CODE HERE
     
